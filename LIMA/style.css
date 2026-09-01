@@ -1,0 +1,29 @@
+/* CABEÇALHO */
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 10px;
+    color: blue;
+     margin: 30px; /* como se fosse um paragrafo/espaço */
+    
+}  
+
+/* CLASSE */
+.Seletor {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
+    margin: 30px;
+    line-height: 1.5px; /* espaçamento do texto */
+}
+
+/* ID = # somente para uma formatação  */
+#texto {
+    color: coral
+    ;
+}
+
+h2 {
+    font-family: Roboto;
+    sans
+    font-weight: lighter;
+    text-align: center;
+}
