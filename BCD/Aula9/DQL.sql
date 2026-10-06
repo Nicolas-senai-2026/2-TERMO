@@ -245,15 +245,17 @@ HAVING COUNT(*) >= 2;
 -- CIDADES COM PELO MENOS DOIS CLIENTES
 
 -- EX 18: RESUMO DE ORDEM DE UMA CONSULTA COMPLETA
-SELECT colunas 
-FROM tabelas
-WHERE condicao
-GROUP BY colunas_agrupar
-HAVING condicao_agrupar
-ORDER BY colunas
-LIMIT quantidade;
+-- SELECT colunas 
+-- FROM tabelas
+-- WHERE condicao
+-- GROUP BY colunas_agrupar
+-- HAVING condicao_agrupar
+-- ORDER BY colunas
+-- LIMIT quantidade;
+-- EXEMPLO DE CONSTRUCAO
 
-SELECT nome, cidade COUNT(*) AS Quantidade_Clientes
+
+SELECT cidade COUNT(*) AS Quantidade_Clientes
 FROM cliente
 WHERE cidade = 'Limeira'
 GROUP BY cidade
