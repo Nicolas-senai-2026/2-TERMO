@@ -1,8 +1,8 @@
 const entrada = require('readline-sync');
 
-console.log("=== CADASTRO DE FERRAMENTAL ===");
+console.log("=== CADASTRO DE FERRAMENTAS ===");
 
-const totalItens = entrada.questionInt("Quantas ferramentas deseja cadastrar? ");
+const totalItens = entrada.questionInt("Quantas ferramentas deseja cadastrar: ");
 
 const listaFerramentas = [];
 
@@ -18,3 +18,9 @@ for (let i = 0; i < totalItens; i++) {
         custoUnitario: custoUnitario
     });
 }
+
+fs.writeFileSync('ferramentas.json', JSON.stringify(listaFerramentas, null, 2));
+
+console.log("\n-------------------------------------------");
+console.log(`Sucesso: ${listaFerramentas.length} itens gravados em 'ferramentas.json'.`);
+console.log("-------------------------------------------");
