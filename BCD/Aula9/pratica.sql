@@ -68,7 +68,7 @@ WHERE nome LIKE '%Cafe%';
 
 
 
--- PARTE C - CÁLCULOS E AGRUPAMENTOS
+-- PARTE C - CÁLCULOS E AGRUPAMENTO
 
 -- 11. Informe quantos produtos estão cadastrados.
 
