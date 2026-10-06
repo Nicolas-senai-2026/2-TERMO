@@ -51,11 +51,13 @@ WHERE preco >= 8.00 AND preco <= 15.00;
 -- 7. Liste os clientes das cidades Limeira ou Americana.
 
 SELECT COUNT(*) AS clientes_cidades
-FROM cidade
+FROM cidade;
 
 -- 8. Localize os produtos cujo nome contém a palavra “Café”.
 
-
+SELECT nome
+FROM produto
+WHERE nome LIKE '%Cafe%';
 
 -- 9. Liste os clientes que não informaram telefone.
 
