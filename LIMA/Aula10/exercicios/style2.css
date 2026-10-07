@@ -3,13 +3,6 @@
     justify-content: space-between;
     align-items: center;
     padding: 23px 8%;
-    /* Alinhar itens no sentido horizontal */
-    /* justify-content: flex-end; */
-    /* justify-content: flex-start; */
-    /* justify-content: center; */
-    /* justify-content: space-evenly; */
-    /* justify-content: space-between; */
-    /* justify-content: space-around; */
     background-color: #f2f2f2;
 }
 
@@ -19,4 +12,42 @@
     list-style: none;
     margin: 0;
     padding: 0;
+}
+
+
+
+.ex3 {
+    display: flex;
+    align-items: flex-start;
+    gap: 43px;
+    padding: 60px ;
+    background-color: antiquewhite;
+}
+
+.ex3-c {
+    display: flex;
+    align-items: center;
+    gap: 43px;
+    padding: 60px ;
+    background-color: antiquewhite;
+
+}
+
+.ex3-d {
+    display: flex;
+    align-items: flex-end;
+    gap: 43px;
+
+    background-color: antiquewhite;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+}
+
+.servicos {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
 }

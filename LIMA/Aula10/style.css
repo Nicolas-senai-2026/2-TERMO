@@ -1,6 +1,6 @@
 .flexb {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     padding: 23px 8%;
     /* Alinhar itens no sentido horizontal */
