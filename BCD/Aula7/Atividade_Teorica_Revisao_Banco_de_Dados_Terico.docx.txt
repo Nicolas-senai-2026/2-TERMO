@@ -1,0 +1,345 @@
+﻿REVISÃO DE CONTEÚDO — BANCO DE DADOS | AULAS 01 A 06  
+ATIVIDADE TEÓRICA DE REVISÃO
+BANCO DE DADOS
+Fundamentos, SGBDs, MER/DER, chaves, dicionário de dados e DDL
+Aluno(a): 
+	Turma: 
+	Data: ____/____/________
+	Professor: 
+	Tempo sugerido: 60–80 minutos
+	Nota: ______ / 100
+	
+
+Objetivo da atividade
+	Revisar os principais conceitos trabalhados nas Aulas 01 a 06, verificando a capacidade de compreender, diferenciar, relacionar e aplicar conceitos de Banco de Dados antes das próximas etapas do projeto SmartCoffee.
+	
+
+Orientações
+	Leia com atenção. Responda com suas próprias palavras sempre que possível. Nas questões objetivas, assinale apenas uma alternativa quando indicado. Em V/F, justifique as falsas. Nas questões com código, analise a intenção do comando e não apenas a sintaxe. A atividade é teórica: não é necessário executar comandos em um SGBD.
+	
+
+PARTE 1 — FUNDAMENTOS DE BANCO DE DADOS
+Revisão da Aula 01 — dado, informação, banco de dados, SGBD e modelos relacionais/não relacionais.
+Questão 1 — Dado x informação
+Explique a diferença entre dado e informação. Crie um exemplo relacionado a uma cafeteria para demonstrar a diferença.
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+Questão 2 — Banco de Dados e SGBD
+Assinale a alternativa que melhor descreve a relação entre Banco de Dados e SGBD.
+(A) Banco de Dados é o programa; SGBD é apenas o conjunto de tabelas.
+(B) Banco de Dados é a coleção organizada de dados; SGBD é o software que permite criar, manipular, controlar e consultar esses dados.
+(C) Banco de Dados e SGBD são exatamente a mesma coisa.
+(D) SGBD é utilizado apenas para criar planilhas eletrônicas.
+
+
+
+
+
+
+
+
+
+
+
+
+Questão 3 — Relacional x não relacional
+Marque V para verdadeiro e F para falso. Justifique as afirmativas falsas.
+(   ) Bancos relacionais normalmente organizam dados em tabelas relacionadas.
+(   ) MongoDB é um exemplo de SGBD relacional.
+(   ) A escolha entre relacional e não relacional depende do problema e da forma como os dados serão utilizados.
+(   ) MySQL e PostgreSQL são exemplos de SGBDs relacionais.
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+Questão 4 — Pensamento analítico
+Uma empresa registra pedidos, clientes, produtos e pagamentos. Explique dois problemas que podem ocorrer se esses dados forem armazenados sem organização, sem regras e sem relacionamentos definidos.
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+Questão 5 — Escolha de tecnologia
+Para um sistema de pedidos de cafeteria com clientes, produtos, mesas, pagamentos e estoque, você tenderia inicialmente a escolher um banco relacional ou não relacional? Justifique com pelo menos dois argumentos.
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+________________
+
+
+PARTE 2 — SGBD, INSTALAÇÃO E AMBIENTE
+Revisão da Aula 02 — função do SGBD, ferramentas, ambiente de desenvolvimento e importância da configuração.
+Questão 6 — Reconhecendo SGBDs
+Circule ou destaque apenas os itens que representam SGBDs/bancos de dados abordados nas aulas.
+MySQL  |  PostgreSQL  |  MySQL Workbench  |  SQL Server  |  Oracle  |  MariaDB
+Questão 7 — Ferramenta x servidor
+Explique por que instalar apenas uma ferramenta gráfica como o MySQL Workbench não significa necessariamente que o servidor de banco de dados esteja instalado e funcionando.
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+Questão 8 — Teste de ambiente
+Após instalar um SGBD, quais evidências mínimas você procuraria para concluir que o ambiente está realmente operacional? Cite pelo menos três.
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+Questão 9 — Erro como diagnóstico
+Durante a instalação, a conexão com o banco falha. Em vez de reinstalar tudo imediatamente, cite três verificações que deveriam ser feitas primeiro.
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+________________
+
+
+PARTE 3 — MER E DER
+Revisão da Aula 03 — modelagem, entidades, atributos, relacionamentos e diferença entre MER e DER.
+Questão 10 — Modelagem antes do código
+Por que a modelagem de dados deve acontecer antes da criação das tabelas? Explique como ela ajuda a reduzir erros no projeto.
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+Questão 11 — Entidade, atributo ou relacionamento?
+Classifique cada item abaixo como ENTIDADE, ATRIBUTO ou RELACIONAMENTO.
+Item
+	Classificação
+	Cliente
+	
+
+	CPF
+	
+
+	Pedido
+	
+
+	realiza
+	
+
+	Produto
+	
+
+	preço
+	
+
+	Fornecedor
+	
+
+	fornece
+	
+
+	Questão 12 — MER x DER
+Explique, com suas palavras, a diferença entre MER (Modelo Entidade-Relacionamento) e DER (Diagrama Entidade-Relacionamento).
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+Questão 13 — Identificando entidades
+Considere o cenário: “Um cliente faz pedidos. Cada pedido possui produtos. Os produtos pertencem a categorias e são preparados por funcionários.” Liste pelo menos cinco entidades possíveis e dois atributos para cada uma.
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+
+
+Questão 14 — Relacionamentos coerentes
+No cenário da questão anterior, escreva quatro relacionamentos possíveis utilizando a forma “ENTIDADE — verbo — ENTIDADE”.
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+________________
+
+
+PARTE 4 — DER, CARDINALIDADES E CHAVES
+Revisão da Aula 04 — cardinalidades 1:1, 1:N, N:N, chave primária e chave estrangeira.
+Questão 15 — Cardinalidade 1:N
+Na SmartCoffee, um CLIENTE pode realizar vários PEDIDOS, mas cada PEDIDO pertence a um único CLIENTE. Qual é a cardinalidade entre CLIENTE e PEDIDO? Explique.
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+Questão 16 — Cardinalidade N:N
+Um PRODUTO pode aparecer em vários PEDIDOS e um PEDIDO pode possuir vários PRODUTOS. Por que esse relacionamento é N:N? Que estrutura intermediária pode ser utilizada para representá-lo no modelo relacional?
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+Questão 17 — Chave primária
+Assinale a alternativa correta sobre chave primária (PK).
+(A) Pode identificar vários registros com o mesmo valor sem problema.
+(B) Serve para identificar unicamente cada registro de uma tabela.
+(C) Existe somente em bancos não relacionais.
+(D) Deve obrigatoriamente armazenar nomes de pessoas.
+Questão 18 — Chave estrangeira
+Considere as tabelas CLIENTE(id_cliente, nome) e PEDIDO(id_pedido, data, id_cliente). Qual campo funciona como FK em PEDIDO? O que ele referencia e qual problema ele ajuda a evitar?
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+Questão 19 — Análise de um DER simplificado
+Analise a representação abaixo e responda: a) identifique duas relações 1:N; b) indique onde seria esperado encontrar FKs; c) explique por que ITEM_PEDIDO é importante.
+CATEGORIA 1 ─── N PRODUTO
+PRODUTO   1 ─── N ITEM_PEDIDO N ─── 1 PEDIDO
+CLIENTE   1 ─── N PEDIDO
+PEDIDO    1 ─── N PAGAMENTO
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+________________
+
+
+PARTE 5 — DICIONÁRIO DE DADOS
+Revisão da Aula 05 — documentação de tabelas, campos, tipos, obrigatoriedade, PK/FK, regras e nomenclatura.
+Questão 20 — Finalidade do dicionário
+Explique o que é um Dicionário de Dados e por que ele é importante para desenvolvimento, manutenção e comunicação entre equipes.
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+Questão 21 — Nomes significativos
+Compare os campos “cod1”, “txt2” e “info” com “id_cliente”, “nome_cliente” e “status_pedido”. Qual grupo é mais adequado? Explique o impacto da nomenclatura na manutenção do sistema.
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+Questão 22 — Leitura de documentação
+Analise o trecho de dicionário de dados e responda: a) qual é a PK? b) quais campos são obrigatórios? c) por que cpf foi definido como CHAR(11)? d) qual campo pode ficar nulo?
+Campo
+	Tipo
+	Obrigatório
+	PK
+	Descrição
+	id_cliente
+	INT
+	Sim
+	Sim
+	Identificador único do cliente
+	nome
+	VARCHAR(100)
+	Sim
+	Não
+	Nome completo
+	cpf
+	CHAR(11)
+	Sim
+	Não
+	CPF sem máscara
+	email
+	VARCHAR(100)
+	Sim
+	Não
+	E-mail principal
+	telefone
+	VARCHAR(20)
+	Não
+	Não
+	Telefone para contato
+	_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+
+
+Questão 23 — Regra de negócio
+Crie duas regras de negócio que poderiam ser documentadas para a tabela PEDIDO da SmartCoffee. Depois explique por que regras de negócio não devem ficar apenas “na cabeça” da equipe.
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+
+
+
+PARTE 6 — DDL E SITUAÇÃO-PROBLEMA INTEGRADORA
+Revisão da Aula 06 — tipos de dados, CREATE, ALTER, DROP, TRUNCATE, RENAME e integração com o modelo SmartCoffee.
+Questão 24 — Tipos de dados
+Associe cada necessidade ao tipo de dado mais adequado entre as opções INT, VARCHAR, CHAR, DATE, DECIMAL e BOOLEAN.
+Necessidade
+	Tipo sugerido
+	Identificador numérico do pedido
+	
+
+	Nome do cliente
+	
+
+	CPF com 11 dígitos sem máscara
+	
+
+	Data do pedido
+	
+
+	Preço de um produto
+	
+
+	Indicador ativo/inativo
+	
+
+	Questão 25 — Comandos DDL
+Relacione o comando à sua finalidade.
+Comando
+	Finalidade
+	CREATE DATABASE
+	
+
+	CREATE TABLE
+	
+
+	ALTER TABLE
+	
+
+	DROP TABLE
+	
+
+	TRUNCATE TABLE
+	
+
+	RENAME TABLE
+	
+
+	________________
+
+
+Questão 26 — Interpretação de CREATE TABLE
+Analise o comando abaixo. Sem executá-lo, explique o que será criado, quais são os tipos dos campos e qual melhoria importante deveria ser feita no campo id_cliente.
+CREATE TABLE cliente (
+   id_cliente INT,
+   nome VARCHAR(100),
+   cpf CHAR(11),
+   email VARCHAR(100)
+);
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+Questão 27 — ALTER x DROP x TRUNCATE
+Explique a diferença entre ALTER TABLE, DROP TABLE e TRUNCATE TABLE. Dê atenção ao que acontece com a estrutura e com os dados.
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+Questão 28 — Boa prática de DDL
+Analise os nomes abaixo e reescreva-os seguindo boas práticas de nomenclatura ensinadas nas aulas: “Tabela Cliente”, “Preço Produto”, “Data Cadastro”, “Código Pedido”. Depois explique o padrão escolhido.
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+Questão 29 — Diagnóstico de projeto
+Um aluno começou a criar tabelas diretamente no SGBD, usou VARCHAR para todos os campos, não definiu PK, não documentou regras e depois percebeu que não sabia como relacionar PEDIDO e PRODUTO. Identifique pelo menos cinco problemas no processo e proponha uma correção para cada um.
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+________________
+
+
+Questão 30 — Desafio SmartCoffee
+Você recebeu a missão de revisar o banco da SmartCoffee antes da implementação. Elabore uma resposta técnica contendo: 1) seis entidades essenciais; 2) uma PK para cada entidade; 3) quatro relacionamentos com cardinalidade; 4) um exemplo de FK; 5) dois campos com seus tipos de dados; 6) um comando DDL que faria sentido na criação inicial do projeto.
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+
+
+Retrospectiva final
+	Antes de entregar, verifique se você consegue explicar sem consultar o material: dado x informação; Banco de Dados x SGBD; relacional x não relacional; entidade, atributo e relacionamento; MER x DER; 1:1, 1:N e N:N; PK e FK; função do Dicionário de Dados; principais tipos de dados; CREATE, ALTER, DROP, TRUNCATE e RENAME.
