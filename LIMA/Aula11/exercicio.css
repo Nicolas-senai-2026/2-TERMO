@@ -1,0 +1,89 @@
+.colunas-dev {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 48px;
+    list-style: none;
+    margin: 0;
+    padding: 32px;
+    height: auto;
+    width: auto;
+    background-color: aqua;
+}
+
+.colunas2-dev {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    list-style: none;
+    margin: 0;
+    padding: 32px;
+    height: auto;
+    width: auto;
+    background-color: aqua;
+}
+
+.colunas3-dev {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 48px;
+    list-style: none;
+    margin: 0;
+    padding: 32px;
+    height: auto;
+    width: auto;
+    background-color: aqua;
+}
+
+.colunas4-dev {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 48px;
+    list-style: none;
+    margin: 0;
+    padding: 32px;
+    height: auto;
+    width: auto;
+    background-color: aqua;
+}
+
+
+/* exercicio 5 */
+
+/* @media (max-width: 800px) {
+    .desktop-dev {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 800px) {
+    .tablet-dev {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 800px) {
+    .celular-dev {
+        grid-template-columns: 1fr;
+    }
+} */
+
+
+
+/* exercicio 6 */
+
+@media (max-width: 800px) {
+    .desktop-dev {
+        grid-template-columns: repeat(auto-fit,
+minmax(220px, 1fr));
+    }
+}
+@media (max-width: 800px) {
+    .tablet-dev {
+        grid-template-columns: repeat(auto-fit,
+minmax(220px, 1fr));
+    }
+}
+@media (max-width: 800px) {
+    .celular-dev {
+        grid-template-columns: repeat(auto-fit,
+minmax(220px, 1fr));
+    }
+}
