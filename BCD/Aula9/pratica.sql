@@ -61,7 +61,7 @@ WHERE nome LIKE '%Cafe%';
 
 -- 9. Liste os clientes que não informaram telefone.
 
-
+SELECT NOME
 
 -- 10. Mostre os pedidos FINALIZADOS com valor acima de R$ 20,00,
 --     do maior para o menor valor.
