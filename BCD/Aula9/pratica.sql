@@ -12,81 +12,86 @@ USE smartcoffee_dql;
 -- PARTE A - AQUECIMENTO
 
 -- 1. Liste todos os clientes cadastrados.
-
-SELECT COUNT(*) AS clientes_cadastrados
+SELECT * 
 FROM cliente;
 
-
 -- 2. Exiba apenas nome, cidade e e-mail dos clientes.
-
 SELECT nome, cidade, email
-FROM cliente
+FROM cliente;
 
 -- 3. Liste os nomes das cidades sem repetir valores.
-
-SELECT COUNT(*) DISTINCT AS nome_cidade
-FROM cidade;
+SELECT DISTINCT cidade
+FROM cliente;
 
 -- 4. Liste todos os produtos em ordem crescente de preço.
-
-SELECT COUNT(*) AS todos_produtos
+SELECT *
 FROM produto
-ORDER BY produto ASC;
+ORDER BY preco ASC;
 
 -- 5. Mostre apenas os 5 produtos mais caros.
-
 SELECT nome, preco
 FROM produto
 ORDER BY preco DESC
 LIMIT 5;
 
+
 -- PARTE B - FILTROS
 
 -- 6. Liste os produtos com preço entre R$ 8,00 e R$ 15,00.
-
 SELECT nome, preco
 FROM produto
-WHERE preco >= 8.00 AND preco <= 15.00;
+WHERE preco BETWEEN 8.00 AND 15.00;
 
 -- 7. Liste os clientes das cidades Limeira ou Americana.
-
-SELECT COUNT(*) AS clientes_cidades
-FROM cidade;
+SELECT *
+FROM cliente
+WHERE cidade IN ('Limeira', 'Americana');
 
 -- 8. Localize os produtos cujo nome contém a palavra “Café”.
-
-SELECT nome
+SELECT *
 FROM produto
-WHERE nome LIKE '%Cafe%';
+WHERE nome LIKE '%Café%';
 
 -- 9. Liste os clientes que não informaram telefone.
+SELECT *
+FROM cliente
+WHERE telefone IS NULL OR telefone = '';
 
-SELECT NOME
-
--- 10. Mostre os pedidos FINALIZADOS com valor acima de R$ 20,00,
---     do maior para o menor valor.
-
-SELECT PEDIDO (20.00) AS `STATUS_PEDIDO`
+-- 10. Mostre os pedidos FINALIZADOS com valor acima de R$ 20,00, do maior para o menor valor.
+SELECT *
 FROM pedido
-WHERE status = 'FINALIZADO'
-ORDER BY PRECO DESC;
+WHERE status = 'FINALIZADO' AND valor > 20.00
+ORDER BY valor DESC;
+
 
 -- PARTE C - CÁLCULOS E AGRUPAMENTO
 
 -- 11. Informe quantos produtos estão cadastrados.
-
- 
+SELECT COUNT(*) AS total_produtos
+FROM produto;
 
 -- 12. Mostre menor preço, maior preço e preço médio dos produtos.
-
+SELECT 
+    MIN(preco) AS menor_preco,
+    MAX(preco) AS maior_preco,
+    AVG(preco) AS preco_medio
+FROM produto;
 
 -- 13. Informe quantos clientes existem em cada cidade.
-
+SELECT cidade, COUNT(*) AS quantidade_clientes
+FROM cliente
+GROUP BY cidade;
 
 -- 14. Mostre somente as cidades que possuem dois ou mais clientes.
-
+SELECT cidade, COUNT(*) AS quantidade_clientes
+FROM cliente
+GROUP BY cidade
+HAVING COUNT(*) >= 2;
 
 -- 15. Calcule o faturamento total considerando apenas pedidos FINALIZADOS.
+SELECT SUM(valor) AS faturamento_total
+FROM pedido
+WHERE status = 'FINALIZADO';
 
 -- PARTE D - RELACIONAMENTOS
 
