@@ -98,11 +98,15 @@ WHERE id_cliente = 23;
 -- Resultado observado:
 
 
+
 -- 15. Explique em comentário por que a FK bloqueou a exclusão.
 -- Resposta:
 
 
+
 -- 16. Crie uma categoria temporária chamada 'Excluir Depois' e remova-a.
+
+
 
 -- PARTE D - INTEGRIDADE E ERROS CONTROLADOS
 -- Execute uma tentativa por vez. Depois deixe o comando problemático comentado.
@@ -111,8 +115,10 @@ WHERE id_cliente = 23;
 -- Qual restrição impediu a operação?
 
 
+
 -- 18. Tente cadastrar um cliente usando 'ana@email.com'.
 -- Qual restrição impediu a operação?
+
 
 
 -- 19. Tente criar um pedido com id_cliente = 9999.
@@ -128,15 +134,21 @@ WHERE id_cliente = 23;
 -- 21. Inicie uma transação.
 
 
+
 -- 22. Dentro dela, cadastre um cliente, um pedido e dois itens relacionados.
+
 
 
 -- 23. Faça uma consulta com JOIN comprovando que os registros existem
 --     enquanto a transação está aberta.
 
 
+
 -- 24. Execute ROLLBACK e depois use SELECT para provar que o cadastro foi desfeito.
+
 
 
 -- 25. Repita o processo com novos dados e finalize usando COMMIT.
 --     Depois consulte os registros persistidos.
+
+
