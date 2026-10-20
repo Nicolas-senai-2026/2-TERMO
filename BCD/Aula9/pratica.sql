@@ -75,7 +75,7 @@ ORDER BY PRECO DESC;
 
 -- 11. Informe quantos produtos estão cadastrados.
 
-
+ 
 
 -- 12. Mostre menor preço, maior preço e preço médio dos produtos.
 
