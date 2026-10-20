@@ -92,6 +92,7 @@ WHERE id_cliente = 23;
 --     Depois localize e exclua apenas esse cliente.
 
 
+
 -- 14. Tente excluir um cliente da base original que possua pedidos.
 --     Deixe o DELETE comentado após o teste e descreva o erro abaixo.
 -- Resultado observado:
