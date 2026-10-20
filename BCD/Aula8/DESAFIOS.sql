@@ -21,8 +21,11 @@ VALUES ('Igor L', 'igor@email.com', '11994562319', 'Guarulhos-Sp', TRUE, NULL);
 
 -- 2. Cadastre a categoria 'Especiais da Casa'.
 
+INSERT INTO categoria (nome_categoria)
+VALUES ('Especiais da Casa')
 
 -- 3. Localize o id da categoria criada e cadastre três produtos nela.
+
 
 
 -- 4. Cadastre um terceiro cliente sem telefone.
