@@ -93,44 +93,118 @@ SELECT SUM(valor) AS faturamento_total
 FROM pedido
 WHERE status = 'FINALIZADO';
 
+-- ============================================================
 -- PARTE D - RELACIONAMENTOS
+-- ============================================================
 
 -- 16. Liste cada pedido exibindo id, data, nome do cliente, status e valor total.
+SELECT 
+    p.id_pedido, 
+    p.data_pedido, 
+    c.nome AS nome_cliente, 
+    p.status, 
+    p.valor_total
+FROM pedido p
+INNER JOIN cliente c ON p.id_cliente = c.id_cliente;
 
 
 -- 17. Liste cada produto acompanhado do nome de sua categoria.
+SELECT 
+    p.nome AS produto, 
+    cat.nome AS categoria
+FROM produto p
+INNER JOIN categoria cat ON p.id_categoria = cat.id_categoria;
 
 
 -- 18. Gere um relatório dos itens vendidos: pedido, produto, quantidade,
 --     preço unitário e subtotal.
+SELECT 
+    ip.id_pedido,
+    p.nome AS produto,
+    ip.quantidade,
+    ip.preco_unitario,
+    (ip.quantidade * ip.preco_unitario) AS subtotal
+FROM item_pedido ip
+INNER JOIN produto p ON ip.id_produto = p.id_produto;
 
 
 -- 19. Mostre todos os clientes, inclusive aqueles que nunca fizeram pedidos.
+SELECT 
+    c.id_cliente,
+    c.nome AS cliente,
+    p.id_pedido,
+    p.data_pedido,
+    p.status
+FROM cliente c
+LEFT JOIN pedido p ON c.id_cliente = p.id_cliente;
 
 
 -- 20. Liste apenas os clientes que nunca fizeram pedidos.
+SELECT 
+    c.id_cliente,
+    c.nome AS cliente,
+    c.email
+FROM cliente c
+LEFT JOIN pedido p ON c.id_cliente = p.id_cliente
+WHERE p.id_pedido IS NULL;
 
 
+-- ============================================================
 -- PARTE E - DESAFIO GERENCIAL
+-- ============================================================
 
 -- 21. Informe quantos pedidos FINALIZADOS cada cliente realizou e quanto
 --     cada cliente gastou. Ordene do maior gasto para o menor.
+SELECT 
+    c.nome AS cliente,
+    COUNT(p.id_pedido) AS quantidade_pedidos,
+    SUM(p.valor_total) AS total_gasto
+FROM cliente c
+INNER JOIN pedido p ON c.id_cliente = p.id_cliente
+WHERE p.status = 'FINALIZADO'
+GROUP BY c.id_cliente, c.nome
+ORDER BY total_gasto DESC;
 
 
 -- 22. Mostre a quantidade de produtos e o preço médio de cada categoria.
+SELECT 
+    cat.nome AS categoria,
+    COUNT(p.id_produto) AS total_produtos,
+    AVG(p.preco) AS preco_medio
+FROM categoria cat
+LEFT JOIN produto p ON cat.id_categoria = p.id_categoria
+GROUP BY cat.id_categoria, cat.nome;
 
 
 -- 23. Descubra quais produtos possuem preço superior ao preço médio geral.
+SELECT 
+    nome, 
+    preco
+FROM produto
+WHERE preco > (SELECT AVG(preco) FROM produto);
 
 
 -- 24. Classifique os produtos como Econômico, Intermediário ou Premium.
 --     Defina e informe suas faixas de preço.
+-- Faixas definidas: 
+--  - Até R$ 10,00: Econômico
+--  - De R$ 10,01 até R$ 25,00: Intermediário
+--  - Acima de R$ 25,00: Premium
+SELECT 
+    nome,
+    preco,
+    CASE 
+        WHEN preco <= 10.00 THEN 'Econômico'
+        WHEN preco BETWEEN 10.01 AND 25.00 THEN 'Intermediário'
+        ELSE 'Premium'
+    END AS classificacao
+FROM produto
+ORDER BY preco ASC;
 
 
 -- 25. CONSULTA AUTORAL
 -- Pergunta de negócio:
+-- Quais são os 3 produtos mais vendidos (em quantidade total de itens) considerando apenas pedidos FINALIZADOS?
 --
 -- Por que essa informação é útil?
---
--- Consulta:
-
+-- Permite identificar os "carros-chefe" da cafeteria, ajudando no controle de estoque de insumos e no planejamento de ações promocionais ou combos de vendas.
