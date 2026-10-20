@@ -119,6 +119,7 @@ WHERE id_cliente = 23;
 -- Qual restrição impediu a operação?
 
 
+
 -- 20. Escreva em comentários a diferença entre os três erros anteriores.
 
 
