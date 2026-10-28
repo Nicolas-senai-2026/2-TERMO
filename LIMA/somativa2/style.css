@@ -1,0 +1,28 @@
+.flex1 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+}
+
+button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 12px 17px ;
+    font-size: 16px;
+}
+
+.color-full {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #18D9FF;
+}
+
+.img-antigo {
+    display: grid;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
