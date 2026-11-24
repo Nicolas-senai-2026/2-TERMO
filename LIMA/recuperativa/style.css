@@ -1,62 +1,102 @@
-.inicio {
-    background-color: rgb(0, 94, 255);
-    display: flex; /*moveu para direita*/
-    height: 90px;
-    align-items: center;
-
-}
-
 body {
-    box-sizing: border-box;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffff;
 }
 
-.img-card img {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-    border-radius: 14px;
+.inicio {
+    background-color: darkblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
 }
 
-.conteudo-card {
-    display: grid;
-    grid-template-columns: repeat(6, 2fr);
-    gap: 14px;
-}
-
-.img-card img {
-    width: 100%;
-    aspect-ratio: 4/3;
-    object-fit: cover;
-    border-radius: 12px;
+.inicio .logo {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
 }
 
 .navegacao {
     display: flex;
-    text-decoration: none;
     list-style: none;
-    gap: 48px;
-    margin:0 14px 20px;
-    padding: 0 20% 20px;
-    justify-content: space-between;
+    gap: 20px;
+}
+
+.navegacao a {
+    color: white;
+    text-decoration: none;
+}
+
+.conteudo-inicial {
+    text-align: center;
+    padding: 30px;
+}
+
+.conteudo-inicial figure {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.conteudo-inicial figure img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.conteudo-inicial button {
+    background-color: darkblue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.conteudo-card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.img-card {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px white;
+}
+
+.img-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.img-card h4 {
+    margin-top: 10px;
 }
 
 .final {
-  background-color: #232d42;
-  color: #ffffff;
-  padding: 24px 20px;
-  text-align: center;
-  font-size: 15px;
-}
-
-.final p {
-  display: flex;
-  color: #ffffff;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
+    background-color: darkblue;
+    color: white;
+    padding: 20px;
+    text-align: center;
 }
 
 .final a {
-    color: #ffffff;
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.final-img {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 20px;
 }
